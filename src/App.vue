@@ -1,11 +1,22 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/detail"></router-link>
+    <router-link to="/panier">Shopping card {{   getCompteur() }}</router-link>
   </nav>
   <router-view/>
 </template>
-
+<script>
+export default {
+ 
+  methods:{
+    getCompteur(){
+      return this.$store.getters.getCompteurPanier;
+    }
+  }
+  
+}
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
